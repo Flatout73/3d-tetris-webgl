@@ -1,10 +1,8 @@
-# Lab 1c
+# 3D Tetris
 
-## Claim
+3D tetris realisation using WebGL. Not a real game, just rendering and collision detection.
 
-I have implemented T1-T5. Code is based on my lab 1b.
-
-T6 partially works because of lab 1b's code. You still can enable shading using "e", "r" and "t". Also, you can enable object's frames using "G" for better distinguishing of objects.
+You can enable different shading using "e", "r" and "t". Also, you can enable object's frames using "G" for better distinguishing of objects.
 
 Known issue:
 
