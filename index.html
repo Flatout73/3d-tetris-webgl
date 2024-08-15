@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WegGL Example</title>
+
+    <script type="text/javascript" src="gl-matrix-min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="Shape.js"></script>
+    <script type="text/javascript" src="helpers.js"></script>
+    <script type="text/javascript" src="key-service.js"></script>
+    <script type="text/javascript" src="shape-factory.js"></script>
+    <script type="text/javascript" src="GenObject.js"></script>
+    <script type="text/javascript" src="GridObject.js"></script>
+    <script type="text/javascript" src="ShaderProgram.js"></script>
+    <script type="text/javascript" src="globals.js"></script>
+    <script type="text/javascript" src="LightObject.js"></script>
+    <script type="text/javascript" src="Game.js"></script>
+    <script type="text/javascript" src="TetraCube.js"></script>
+
+    <script id="v-shader-nolight" type="x-shader/x-vertex">
+        precision mediump float;
+
+        attribute vec3 vertexPosition; 
+        attribute vec3 vertexColor;
+
+        uniform mat4 modelViewMatrix;
+        uniform mat4 projectionMatrix;
+
+        varying vec3 fragmentColor;    
+
+        void main() {
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(vertexPosition, 1.0); 
+            fragmentColor = vertexColor; 
+        }
+    </script>
+
+    <script id="f-shader" type="x-shader/x-fragment">
+        precision mediump float;
+
+        varying vec3 fragmentColor;
+
+        void main() {
+            gl_FragColor = vec4(fragmentColor, 1.0);
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas" width="1200" height="1200"></canvas>
+</body>
+
+
+</html>
